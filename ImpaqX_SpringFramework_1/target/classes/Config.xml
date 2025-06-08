@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="dev" class="com.learn.maven.spring.SpringFrameworkDemo.Dev" autowire="byName">
+ <!-- <property name="comp" ref="lap"></property> -->
+</bean>
+<bean id="comp" class="com.learn.maven.spring.SpringFrameworkDemo.Laptop">
+</bean>
+
+<bean id="comp1" class=" com.learn.maven.spring.SpringFrameworkDemo.Desktop" ></bean>
+
+<bean id="data" class=" com.learn.maven.spring.SpringFrameworkDemo.Desktop" ></bean>
+
+</beans>
