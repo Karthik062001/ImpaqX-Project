@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <bean name="com.SpringEX4.SpringProj4.KodnestClasses" id="KodClas">
+  <property name="tr" ref="tr1"></property>
+  
+  </bean>
+  
+ <bean name="com.SpringEX4.SpringProj4.Trainee1" id="tr1" >
+  
+  <property name="t_id" value="01"></property>
+  <property name="t_name" value="kari"></property>
+  
+  </bean>
+  
+   <bean name="com.SpringEX4.SpringProj4.Trainee1" id="tr2" >
+  
+  <property name="t_id" value="02"/>
+  <property name="t_namee" value="chotoo"/>
+  
+  </bean>
+  
+  </beans>
