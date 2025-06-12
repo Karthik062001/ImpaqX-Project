@@ -15,15 +15,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.OneToOne3.Entity.Applicant;
 import com.example.OneToOne3.Entity.Resume;
 import com.example.OneToOne3.service.ResumeService;
 
 
 
 @RestController
-@RequestMapping("/api/resme")
+@RequestMapping("/api/resume")
 public class ResumeController {
 
 	@Autowired
@@ -41,11 +43,11 @@ public class ResumeController {
 		return resService.getAllResume();
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Resume> getById(@PathVariable int id)
-	{
-		return resService.getById(id);
-	}
+//	@GetMapping("/{id}")
+//	public Optional<Resume> getById(@PathVariable int id)
+//	{
+//		return resService.getById(id);
+//	}
 	
 	@PutMapping("/{id}")
 	public Resume updateResume(@PathVariable int id,@RequestBody Resume res)
@@ -61,5 +63,22 @@ public class ResumeController {
 		data.put("Message", "The Resume "+id+"is deleted Successfully");
 		data.put("Message", HttpStatus.ACCEPTED.value());
 		return ResponseEntity.ok(data);
+	}
+	
+	@GetMapping("/id")
+	public  Resume findResumeById(@RequestParam int id)
+	{
+		return resService.findResumeById(id);
+	}
+	
+	@GetMapping("/applicantId")
+	public List<Resume> findResumeByApplicantId(@RequestParam int applicantId)
+	{
+		return resService.findResumeByApplicantId(applicantId);
+	}
+	@GetMapping("/orderByresume")
+	public List<Applicant> orderByresumeContent(int resumeId)
+	{
+		return resService.orderByresumeContent(resumeId);
 	}
 }

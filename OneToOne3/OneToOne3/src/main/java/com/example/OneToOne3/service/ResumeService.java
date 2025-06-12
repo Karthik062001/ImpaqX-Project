@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import com.example.OneToOne3.Entity.Applicant;
 import com.example.OneToOne3.Entity.Resume;
@@ -56,7 +57,6 @@ public class ResumeService {
 		{
 			return null;
 		}
-		
 	}
 
 	public void deleteResume(int id) {
@@ -67,5 +67,20 @@ public class ResumeService {
 	public Optional<Resume> getById(int id) {
 		return resRepo.findById(id);
 	
+	}
+	
+	public  Resume findResumeById(int id)
+	{
+		return resRepo.findResumeById(id);
+	}
+	
+	public List<Resume> findResumeByApplicantId(int applicantId)
+	{
+		return resRepo.findResumeByApplicantId(applicantId);
+	}
+	
+	public List<Applicant> orderByresumeContent(int resumeId)
+	{
+		return resRepo.orderByresumeContent(resumeId);
 	}
 }

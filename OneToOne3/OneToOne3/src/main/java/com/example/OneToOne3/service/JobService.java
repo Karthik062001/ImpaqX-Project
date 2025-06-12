@@ -72,8 +72,11 @@ public class JobService {
 		{
 		   throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The applicant is not present");
 		}
+	}
+	
+	public List<Job> findJobsByApplicantId(int applicantId){
 		
-		
+		return jobrepo.findJobsByApplicantId(applicantId);
 	}
 
 
