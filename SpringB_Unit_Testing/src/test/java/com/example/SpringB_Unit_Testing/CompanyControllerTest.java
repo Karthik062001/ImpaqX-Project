@@ -75,6 +75,6 @@ public class CompanyControllerTest {
     void deleteCompanyShouldCallServiceDeleteMethod() {
         companyController.deleteComp(6);
 
-        Mockito.verify(companyService).deleteComp(3);
+        Mockito.verify(companyService).deleteComp(6);
     }
 }
